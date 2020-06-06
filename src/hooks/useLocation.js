@@ -3,13 +3,11 @@ import {Accuracy, requestPermissionsAsync, watchPositionAsync} from 'expo-locati
 
 export default (shouldTrack, callback) => {
     const [err, setErr] = useState(null);
-    
-    
-    
+     
 
     //run 1 time to check the permissions
     useEffect(() =>{
-        let subscriber
+        let subscriber;
         const startWatching = async () => {
             try {
                 await requestPermissionsAsync();
@@ -21,8 +19,9 @@ export default (shouldTrack, callback) => {
                     }, 
                     callback
                 );
-                setSubscriber(sub);
+                setErr(null);
             } catch (e) {
+                console.log('fout tijdens positionering:', e);
                 setErr(e);
             };
         };
@@ -37,6 +36,8 @@ export default (shouldTrack, callback) => {
             subscriber = null;
         };
 
+
+        //cleanup function
         return () => {
             if(subscriber){
                 subscriber.remove();

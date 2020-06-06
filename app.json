@@ -4,8 +4,7 @@
     "slug": "Tracks",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -22,11 +21,13 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "be.webmindz.tracks",
       "supportsTablet": true
     },
     "android": {
       "package": "be.webmindz.tracks",
       "versionCode": 1
-    }
+    },
+    "description": ""
   }
 }

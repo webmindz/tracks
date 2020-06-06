@@ -12,8 +12,6 @@ const TrackListScreen = ({navigation}) => {
         })();
       }, [navigation]);
 
-    console.log('state: ', state);
-
     return (
         <>
         <SafeAreaView style={styles.container} forceInset={{ top: 'always', bottom:'always' }}>

@@ -10,20 +10,19 @@ import TrackForm from '../components/TrackForm';
 
 const TrackCreateScreen = () => {
     const isFocused = useIsFocused();
-    const {state: {recording}, addLocation} = useContext(LocationContext);   
+    const {state, addLocation} = useContext(LocationContext);   
    
     const callback = useCallback(location =>{
-        addLocation(location, recording);
-    },[recording]);
+        addLocation(location, state.recording);
+    },[state.recording]);
     
-    const [err] = useLocation(isFocused || recording, callback);
-
+    const [err] = useLocation(isFocused || state.recording, callback);
 
     return (
         <SafeAreaView style={styles.container}>
                 <Text h2>Create a Track</Text>
                 <Map />
-                { err ? <Text>Please enable Location Services.</Text>: null}
+    { err ? <Text>Please enable Location Services.</Text>: null}
                 <TrackForm />
         </SafeAreaView>
     );
@@ -35,4 +34,4 @@ const styles = StyleSheet.create({
     subHeaderStyle: {},
 });
 
-export default TrackCreateScreen;
+export default TrackCreateScreen; 
