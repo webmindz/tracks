@@ -28,6 +28,6 @@
       "package": "be.webmindz.tracks",
       "versionCode": 1
     },
-    "description": ""
+    "description": "This is my first React Native application based on the online Udemy Course (https://www.udemy.com/course/the-complete-react-native-and-redux-course/)."
   }
 }
