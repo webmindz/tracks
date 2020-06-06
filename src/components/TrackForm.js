@@ -7,7 +7,7 @@ import useSaveTrack from '../hooks/useSaveTrack';
 
 const TrackForm = () => {
     const {
-        state: {name, recording, locations},
+        state,
         startRecording,
         stopRecording,
         changeName
@@ -20,18 +20,18 @@ const TrackForm = () => {
         <>
             <Spacer>
                 <Input 
-                    value={name}
+                    value={state.name}
                     onChangeText={changeName}
                     placeholder="Enter track name"
                 />
             </Spacer>
             <Spacer>
-            {recording
+            {state.recording
                 ? <Button title="Stop" onPress={stopRecording} />
                 : <Button title="Start Recording" onPress={startRecording} />
             }</Spacer>
 <Spacer>
-            {!recording && locations.length
+            {!state.recording && state.locations.length
                 ? <Button title="Save track" onPress={saveTrack} />
                 : null
             }</Spacer>

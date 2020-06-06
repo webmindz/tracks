@@ -22,7 +22,7 @@ const TrackCreateScreen = () => {
         <SafeAreaView style={styles.container}>
                 <Text h2>Create a Track</Text>
                 <Map />
-    { err ? <Text>Please enable Location Services.</Text>: null}
+        { err ? <Text>Please enable Location Services.</Text>: null}
                 <TrackForm />
         </SafeAreaView>
     );
